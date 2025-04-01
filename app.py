@@ -1,14 +1,12 @@
 from tkinter import *
 import random as rd
 import string
-from ttkbootstrap import Style
 
 
 #Class
 class App():
     def __init__(self, window):
         #Main window
-        #self.style = Style(theme="morph")
         self.window = window
         self.window.title('Password generator')
         self.window.geometry('600x500')
@@ -161,14 +159,16 @@ class App():
         
 
     def show_password(self):
+        """It shows the new password"""
         self.final_password.config(text=self.new_password, fg='#FFFFFF', padx=0, anchor="w", font=('Poppins',10))
 
 
     def copy_password(self):
+        """It copys the new password to the clipboard"""
         password = self.new_password
         app.window.clipboard_append(password)
         app.window.update()
 
 
 app = App(Tk())
-app.window.mainloop() #Esto sería root en programación funcional.
+app.window.mainloop() 
